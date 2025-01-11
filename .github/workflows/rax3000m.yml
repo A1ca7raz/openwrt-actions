@@ -1,7 +1,15 @@
 name: Build firmware for RAX3000M
 
 on:
+  push:
+    paths:
+      - 'RAX3000M/*'
+      - '.github/workflows/rax3000m.yml'
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -11,4 +19,4 @@ jobs:
     with:
       repo: https://github.com/hanwckf/immortalwrt-mt798x
       branch: openwrt-21.02
-      config: RAX3000M/.config
+      config: RAX3000M/mt7981-ax3000.config
