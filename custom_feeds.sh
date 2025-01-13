@@ -34,6 +34,7 @@
 # git clone https://github.com/jerrykuku/lua-maxminddb     #git lua-maxminddb 依赖
 # git clone https://github.com/jerrykuku/luci-app-vssr
 # git clone https://github.com/xiaorouji/openwrt-passwall2  #passwall出国软件
+git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
 # rm -rf ./package/lean/luci-theme-argon && git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon  #新的argon主题
 # 全新的[argon-主题]此主题玩法很多,这里看说明【https://github.com/jerrykuku/luci-theme-argon/blob/18.06/README_ZH.md】
