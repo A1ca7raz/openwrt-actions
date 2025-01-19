@@ -45,7 +45,15 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - name: 0.1 Initialization environment
+    - name: 0.1 Checkout
+      uses: actions/checkout@main
+
+    - name: 0.2 Check inputs
+      run: |
+        [[ ! -e $CONFIG_FILE ]] && echo "Configuration does not exist!" && exit 123
+        true
+
+    - name: 0.3 Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
@@ -67,8 +75,6 @@ jobs:
     #     remove-codeql: true
     #     remove-docker-images: true
 
-    - name: 0.3 Checkout
-      uses: actions/checkout@main
 
     - name: 0.4 Clone OpenWRT source code
       working-directory: /workdir

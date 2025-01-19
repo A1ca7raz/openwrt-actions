@@ -19,4 +19,4 @@ jobs:
     with:
       repo: https://github.com/hanwckf/immortalwrt-mt798x
       branch: openwrt-21.02
-      config: RAX3000M/my6.config
+      config: RAX3000M/my7.config
