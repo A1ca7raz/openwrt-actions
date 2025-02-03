@@ -19,4 +19,4 @@ jobs:
     with:
       repo: https://github.com/coolsnowwolf/lede
       branch: master
-      config: RM2100/lede_23.05.config
+      config: RM2100/1.config
