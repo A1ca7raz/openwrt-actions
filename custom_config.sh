@@ -11,12 +11,18 @@
 #
 # 通过修改diy-part2.sh文件可以自定义默认IP，登陆密码等。按我的需要现在的默认IP为172.16.1.1
 # 修改openwrt登陆地址,把下面的172.16.1.1修改成你想要的就可以了
-sed -i 's/192.168.1.1/192.168.10.1/g' ./package/base-files/files/bin/config_generate
+# sed -i 's/192.168.1.1/192.168.10.1/g' ./package/base-files/files/bin/config_generate
 
 # 修改主机名字，把OpenWrt-123修改你喜欢的就行（不能纯数字或者使用中文）
 sed -i 's/OpenWrt/TerraNet/g' ./package/base-files/files/bin/config_generate
 sed -i 's/LEDE/TerraNet/g' ./package/base-files/files/bin/config_generate
 sed -i 's/ImmortalWrt/TerraNet/g' ./package/base-files/files/bin/config_generate
+
+# MT7621 CPU超频1100MHz补丁
+machine=`dirname $CONFIG_FILE`
+[[ ${machine: -6} = "RM2100" ]] && \
+  cp -rf $GITHUB_WORKSPACE/RM2100/322-mt7621-fix-cpu-clk-add-clkdev.patch ./target/linux/ramips/patches-5.10/322-mt7621-fix-cpu-clk-add-clkdev.patch && \
+  echo "使用 MT7621 超频补丁"
 
 # Enable wifi
 # sed -i 's/.disabled=1/.disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
