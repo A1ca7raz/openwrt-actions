@@ -17,6 +17,6 @@ jobs:
     permissions:
       contents: write
     with:
-      repo: https://github.com/coolsnowwolf/lede
-      branch: master
-      config: RM2100/lede_23.05.config
+      repo: https://github.com/immortalwrt/immortalwrt
+      branch: openwrt-24.10
+      config: RM2100/immortalwrt.config

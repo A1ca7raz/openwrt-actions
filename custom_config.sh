@@ -18,12 +18,6 @@ sed -i 's/OpenWrt/TerraNet/g' ./package/base-files/files/bin/config_generate
 sed -i 's/LEDE/TerraNet/g' ./package/base-files/files/bin/config_generate
 sed -i 's/ImmortalWrt/TerraNet/g' ./package/base-files/files/bin/config_generate
 
-# MT7621 CPU超频1100MHz补丁
-machine=`dirname $CONFIG_FILE`
-[[ ${machine: -6} = "RM2100" ]] && \
-  cp -rf $GITHUB_WORKSPACE/RM2100/322-mt7621-fix-cpu-clk-add-clkdev.patch ./target/linux/ramips/patches-5.10/322-mt7621-fix-cpu-clk-add-clkdev.patch && \
-  echo "使用 MT7621 超频补丁"
-
 # Enable wifi
 # sed -i 's/.disabled=1/.disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
