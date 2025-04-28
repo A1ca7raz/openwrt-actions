@@ -136,7 +136,7 @@ jobs:
       id: organize
       run: |
         cd openwrt/bin/targets/*/* && rm -rf packages
-        { echo '### SHA256SUMS'; echo '```txt'; cat sha256sums; echo '```'; } > openwrt/SHA256SUMS
+        { echo '### SHA256SUMS'; echo '```txt'; cat sha256sums; echo '```'; } > $GITHUB_WORKSPACE/openwrt/SHA256SUMS
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
