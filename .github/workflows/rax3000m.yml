@@ -17,6 +17,6 @@ jobs:
     permissions:
       contents: write
     with:
-      repo: https://github.com/hanwckf/immortalwrt-mt798x
-      branch: openwrt-21.02
-      config: RAX3000M/hanwckf_21.02.config
+      repo: https://github.com/immortalwrt/immortalwrt
+      branch: openwrt-24.10
+      config: RAX3000M/immortalwrt_24.10.config
